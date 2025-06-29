@@ -159,63 +159,52 @@ renderBars("frontend");
 /*project section*/
 const projects = [
   {
-    type: "Diploma Final Year Project",
-    title: "PlotPicks (Books website)",
-    image: "./include/PlotPicks.png",
-    overview:
-      "Streamlines vaccination record management with a centralized, paperless system across India.",
-    techStack: ["HTML", "CSS3", "JavaScript", "PHP", "MySQL"],
-    githubLink: "https://github.com/Mandeep210405/TCL",
-    keyFeatures: [
-      "Centralized Record Management",
-      "Appointment Scheduling",
-      "Location Integration",
-      "Analytics",
-    ],
-  },
-  {
     type: "Degree Project",
-    title: "NEXX (Educational Platform)",
-    image: "./assets/nexx.png",
+    title: "PlotPicks (Books Website)",
+    image: "./include/Boook.avif",
     overview:
-      "Platform for engineering students with PDFs, videos, authentication, and role-based access.",
-    techStack: ["MySQL", "PHP 7.4+", "JavaScript", "HTML5", "Bootstrap"],
-    githubLink: "https://github.com/Mandeep210405/TCL-Degree",
+      "PlotPicks is a dynamic book recommendation and review platform where users can explore books, write reviews, rate their favorites, and suggest new titles. It also features an admin panel for managing users, genres, and book content.",
+    techStack: ["HTML", "CSS3", "JavaScript", "PHP", "MySQL"],
+    githubLink: "https://github.com/HetalBaraiya/Plotpicks_php",
     keyFeatures: [
-      "Educational Access",
-      "File Management",
-      "API Integration",
-      "Responsive Interface",
+      "Browse and Search Books",
+      "User Reviews and Star Ratings",
+      "Book Suggestion System",
+      "Admin Panel for Content Management",
+      "Responsive UI with Genre Filtering",
     ],
   },
   {
-    type: "Diploma Final Year Project",
-    title: "PlotPicks (Books website)",
-    image: "./include/PlotPicks.png",
+    type: "Mini Project",
+    title: "Weather App - Your Daily Forecast",
+    image: "./include/weather.png", // Update this path as per your project folder
     overview:
-      "Streamlines vaccination record management with a centralized, paperless system across India.",
-    techStack: ["HTML", "CSS3", "JavaScript", "PHP", "MySQL"],
-    githubLink: "https://github.com/Mandeep210405/TCL",
+      "A clean and responsive weather web app that provides real-time weather updates including temperature, humidity, wind speed, and condition icons for any city using the OpenWeatherMap API.",
+    techStack: ["HTML5", "CSS3", "JavaScript", "OpenWeatherMap API"],
+    githubLink: "https://github.com/HetalBaraiya/weather_app",
     keyFeatures: [
-      "Centralized Record Management",
-      "Appointment Scheduling",
-      "Location Integration",
-      "Analytics",
+      "Search weather by city name",
+      "Real-time temperature, humidity, and wind speed",
+      "Dynamic weather icons based on current conditions",
+      "Fully responsive design for all devices",
+      "Error handling for invalid city names",
     ],
   },
   {
-    type: "Diploma Final Year Project",
-    title: "PlotPicks (Books website)",
-    image: "./include/PlotPicks.png",
+    type: "Diploma Project",
+    title: "Packers & Movers Service Platform",
+    image: "./include/packers.png", // Replace with actual screenshot path
     overview:
-      "Streamlines vaccination record management with a centralized, paperless system across India.",
-    techStack: ["HTML", "CSS3", "JavaScript", "PHP", "MySQL"],
-    githubLink: "https://github.com/Mandeep210405/TCL",
+      "A user-friendly platform that connects customers with local packers and movers. Users can browse available moving services, book the one they like, and get assistance for relocating to a new location. The platform includes an interface for service providers to manage requests, details, and bookings.",
+    techStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+    githubLink: "https://github.com/HetalBaraiya/Packers_and_Movers",
     keyFeatures: [
-      "Centralized Record Management",
-      "Appointment Scheduling",
-      "Location Integration",
-      "Analytics",
+      "Browse and select from various packers & movers options",
+      "User booking system with request submission",
+      "Provider dashboard to view and manage move requests",
+      "Capture detailed move information (locations, dates, items)",
+      "Responsive design for both user and provider interfaces",
+      "Backend database integration for bookings and user data",
     ],
   },
 ];
@@ -287,3 +276,38 @@ function animate() {
 }
 
 animate();
+
+/*button*/
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    const circle = document.createElement("span");
+    circle.style.left = e.offsetX + "px";
+    circle.style.top = e.offsetY + "px";
+    this.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+  });
+});
+
+const text = "Full-Stack Developer | Creative Coder";
+let i = 0;
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing-text").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 100); // speed of typing (in ms)
+  }
+}
+typing();
+
+const faders = document.querySelectorAll(".fade-in");
+const appearOptions = { threshold: 0.1 };
+
+const appearOnScroll = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, appearOptions);
+
+faders.forEach((fader) => appearOnScroll.observe(fader));
