@@ -161,7 +161,7 @@ const projects = [
   {
     type: "Degree Project",
     title: "PlotPicks (Books Website)",
-    image: "./include/Boook.avif",
+    image: "./include/Plotpicks.png",
     overview:
       "PlotPicks is a dynamic book recommendation and review platform where users can explore books, write reviews, rate their favorites, and suggest new titles. It also features an admin panel for managing users, genres, and book content.",
     techStack: ["HTML", "CSS3", "JavaScript", "PHP", "MySQL"],
