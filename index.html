@@ -38,7 +38,8 @@
             <h2>I’m a <span id="typing-text"></span></h2>
             <h1>Hi, I am <span>Hetal Baraiya</span><br>I build responsive & modern websites.</h1>
             <div class="buttons">
-                <a href="#" class="btn primary">Hire me</a>
+                <a href="#" class="btn primary" onclick="submitHireForm(event)">Hire me</a>
+
                 <a href="./include/Resume!!!!.pdf" class="btn outline" download>Download CV</a>
             </div>
         </div>
@@ -186,7 +187,7 @@
     </script>
 
 
-
+    <!-- Projects Section -->
     <section id="projects" class="projects-section section-reveal">
         <div class="container">
             <h2 class="section-title">Projects</h2>
@@ -200,15 +201,18 @@
     <section id="contact" class="contact-section section-reveal">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form">
-                <div class="form-group"><input type="text" placeholder="Your Name" required /></div>
-                <div class="form-group"><input type="email" placeholder="Your Email" required /></div>
-                <div class="form-group"><textarea rows="5" placeholder="Your Message" required></textarea></div>
-                <button type="submit" class="btn primary">Send Message</button>
 
+            <form id="contact-form" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn primary">Send Message</button>
             </form>
+
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -228,6 +232,13 @@
 
     <canvas id="cursor-canvas"></canvas>
 
+    <!-- Hidden Form for Hire Me button -->
+    <!-- Hidden Form for Hire Me -->
+    <form id="hire-form" action="https://formspree.io/f/xrbkjgkz" method="POST" style="display: none;"
+        onsubmit="setTimeout(() => window.location.href='thankyou.html', 1000)">
+        <input type="hidden" name="hire_request" value="Someone clicked the 'Hire Me' button on Hetal's portfolio." />
+    </form>
+
 
 
 
@@ -236,6 +247,15 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
+
+    <script>
+        function submitHireForm(event) {
+            event.preventDefault(); // prevent normal link behavior
+            document.getElementById('hire-form').submit();
+        }
+    </script>
+
+
 
 
 

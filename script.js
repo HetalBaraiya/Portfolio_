@@ -311,3 +311,31 @@ const appearOnScroll = new IntersectionObserver(function (entries) {
 }, appearOptions);
 
 faders.forEach((fader) => appearOnScroll.observe(fader));
+
+//contact section
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://formspree.io/f/xrbkjgkz", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = "thankyou.html";
+        } else {
+          alert("There was an error. Please try again later.");
+        }
+      })
+      .catch((error) => {
+        alert("There was a network error.");
+      });
+  });
