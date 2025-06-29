@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ9JEQGWT9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RJ9JEQGWT9');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio of Hetal Baraiya – Frontend Developer and UI Designer" />
@@ -35,10 +44,11 @@
     <section class="hero section-reveal">
         <div class="hero-left">
             <p class="tagline">From logic to layout — I build with both.</p>
-            <h2>I’m a <span id="typing-text"></span></h2>
+            <h2> <span id="typing-text"></span></h2>
             <h1>Hi, I am <span>Hetal Baraiya</span><br>I build responsive & modern websites.</h1>
             <div class="buttons">
-                <a href="#" class="btn primary" onclick="submitHireForm(event)">Hire me</a>
+                <a href="#contact" class="btn primary">Hire me</a>
+
 
                 <a href="./include/Resume!!!!.pdf" class="btn outline" download>Download CV</a>
             </div>
@@ -53,28 +63,42 @@
     <!-- About Section -->
     <section id="about" class="about-section section-reveal">
         <div class="container">
-            <div class="about-content full-width">
-                <h5 class="section-subtitle">--</h5>
-                <h2>About Me</h2>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <!-- Left Panel: Summary + Education + Languages -->
+                <div class="about-left">
+                    <h3 class="highlight-title">Designing with logic. Developing with passion.</h3>
+                    <p>
+                        I’m Hetal Baraiya — a Computer Engineering student with a strong academic foundation and a
+                        passion for crafting elegant, responsive interfaces. I specialize in HTML, CSS, JavaScript, and
+                        Bootstrap, while bridging design and backend logic through PHP and MySQL. Eager to contribute to
+                        innovative, team-driven environments, I approach full-stack development with clarity,
+                        collaboration, and purpose. Every project is a new chapter — a chance to build, learn, and bring
+                        ideas to life.
 
-                <p>
-                    <strong>Brewing ideas with caffeine and curiosity, I craft code that speaks and designs that
-                        feel.</strong>
-                </p>
-                <p>
-                    Hello, I'm Hetal Baraiya — a storyteller in syntax, weaving clean, responsive interfaces from lines
-                    of code. My roots lie in HTML and CSS, where structure meets style, and I build upon them with a
-                    growing command of JavaScript, Bootstrap, and modern front-end frameworks.
-                </p>
-                <p>
-                    Behind the screens, I navigate the logic of PHP and MySQL, drawn to the harmony of full-stack
-                    development. Whether it's designing elegant user journeys or architecting scalable solutions, I’m
-                    guided by a passion for clarity, collaboration, and continuous growth.
-                </p>
-                <p>
-                    For me, every project is a new chapter — a chance to create with purpose, to learn with intent, and
-                    to turn vision into a living, breathing experience.
-                </p>
+                    </p>
+                    <h3 class="highlight-title">Languages</h3>
+                    <p class="languages">
+                        <span>English</span> <span>Gujarati</span> <span>Hindi</span>
+                    </p>
+                </div>
+
+                <!-- Right Panel: Research Experience -->
+                <div class="about-right">
+                    <h3 class="highlight-title">Experience</h3>
+                    <div class="project-box">
+                        <h4>Participant, Pragati Path Cohort-5 | Infosys Springboard</h4>
+                        <p><em>Duration: April – July 2025 (Currently Enrolled)</em></p>
+                        <ul>
+                            <li>Enrolled in a structured online program under Infosys Springboard's career readiness
+                                initiative.</li>
+                            <li>Focusing on technical and professional skill-building through curated courses and
+                                learning tracks.</li>
+                            <li>Completing hands-on assignments and guided development modules to prepare for industry
+                                roles.</li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -199,45 +223,62 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section section-reveal">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-block">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hetaldbaraiya@gmail.com</p>
+                    </div>
+                </div>
 
-            <form id="contact-form" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required />
+                <div class="info-block">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Gujarat, India</p>
+                    </div>
+                </div>
+                <div class="socials">
+                    <h4>Connect With Me</h4>
+                    <a href="https://github.com/HetalBaraiya" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/hetal-baraiya-1ab885219" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/xrbkjgkz" method="POST" class="contact-form">
+                <h3>Send Me a Message</h3>
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                </div>
+                <input type="text" name="subject" placeholder="Subject" required />
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <input type="hidden" name="_redirect" value="thankyou.html" />
                 <button type="submit" class="btn primary">Send Message</button>
             </form>
-
         </div>
     </section>
+
 
 
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <h3>HETAL BARAIYA</h3>
-            <p>Every line of code tells a story</p>
-            <div class="social-icons">
-                <a href="https://github.com/HetalBaraiya" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/hetal-baraiya-1ab885219/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/hetal.baraiyaa/?igsh=M3QzMGx3anZyaWtq#" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-            </div>
+
+            <p>Every line of code tells a story.</p>
+
             <p class="copyright">© 2025 Hetal Baraiya. All rights reserved.</p>
         </div>
     </footer>
 
     <canvas id="cursor-canvas"></canvas>
 
-    <!-- Hidden Form for Hire Me button -->
-    <!-- Hidden Form for Hire Me -->
-    <form id="hire-form" action="https://formspree.io/f/xrbkjgkz" method="POST" style="display: none;"
-        onsubmit="setTimeout(() => window.location.href='thankyou.html', 1000)">
-        <input type="hidden" name="hire_request" value="Someone clicked the 'Hire Me' button on Hetal's portfolio." />
-    </form>
+
 
 
 
@@ -248,12 +289,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
 
-    <script>
-        function submitHireForm(event) {
-            event.preventDefault(); // prevent normal link behavior
-            document.getElementById('hire-form').submit();
-        }
-    </script>
+
 
 
 

@@ -288,7 +288,7 @@ document.querySelectorAll("button").forEach((btn) => {
   });
 });
 
-const text = "Full-Stack Developer | Creative Coder";
+const text = "Student | Full-Stack Developer ";
 let i = 0;
 function typing() {
   if (i < text.length) {
